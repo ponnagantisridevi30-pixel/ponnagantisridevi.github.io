@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Gaming Website</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #111827, #312e81);
+      color: white;
+      min-height: 100vh;
+    }
+
+    header {
+      text-align: center;
+      padding: 35px 20px;
+      background: rgba(0, 0, 0, 0.35);
+    }
+
+    header h1 {
+      font-size: 45px;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 18px;
+      color: #d1d5db;
+    }
+
+    .games {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      flex-wrap: wrap;
+      padding: 50px 20px;
+    }
+
+    .game-card {
+      width: 280px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 25px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    .game-card h2 {
+      margin-bottom: 12px;
+    }
+
+    .game-card p {
+      color: #d1d5db;
+      margin-bottom: 20px;
+    }
+
+    button {
+      border: none;
+      padding: 12px 25px;
+      border-radius: 10px;
+      background: #6366f1;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #818cf8;
+    }
+
+    #gameArea {
+      text-align: center;
+      padding: 20px;
+      display: none;
+    }
+
+    #number {
+      font-size: 60px;
+      margin: 20px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      color: #9ca3af;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>🎮 My Gaming Website</h1>
+    <p>Welcome to my gaming zone!</p>
+  </header>
+
+  <section class="games">
+
+    <div class="game-card">
+      <h2>🎯 Number Challenge</h2>
+      <p>Click the button and see how many points you can score!</p>
+      <button onclick="startGame()">Play Game</button>
+    </div>
+
+    <div class="game-card">
+      <h2>🚀 Coming Soon</h2>
+      <p>More exciting games will be added here.</p>
+      <button onclick="comingSoon()">Coming Soon</button>
+    </div>
+
+  </section>
+
+  <section id="gameArea">
+    <h2>🎯 Number Challenge</h2>
+    <div id="number">0</div>
+    <button onclick="addPoint()">CLICK!</button>
+    <p id="score">Score: 0</p>
+  </section>
+
+  <footer>
+    © 2026 My Gaming Website
+  </footer>
+
+  <script>
+    let score = 0;
+
+    function startGame() {
+      document.getElementById("gameArea").style.display = "block";
+      score = 0;
+      document.getElementById("number").innerText = "0";
+      document.getElementById("score").innerText = "Score: 0";
+    }
+
+    function addPoint() {
+      score++;
+      document.getElementById("number").innerText = score;
+      document.getElementById("score").innerText = "Score: " + score;
+    }
+
+    function comingSoon() {
+      alert("🚀 New games are coming soon!");
+    }
+  </script>
+
+</body>
+</html>
